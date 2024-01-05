@@ -1,0 +1,21 @@
+name: sync with My-Portfolio
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GH_TOKEN }}
+        with:
+          source-directory: "src/app"
+          destination-github-username: "pabath99"
+          destination-repository-name: "My-Portfolio"
+          target-directory: "src/app/[domain]/folio"
+          user-email: hello@pabath99.co
+          target-branch: dev
+          create-target-branch-if-needed: true
