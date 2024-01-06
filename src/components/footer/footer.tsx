@@ -46,7 +46,7 @@ export const Footer = async () => {
             >
               {siteConfig.name}
             </a>{" "}
-            2023.
+            2024.
           </p>
           <div className="text-foreground-secondary flex space-x-2 text-sm ">
             <p>

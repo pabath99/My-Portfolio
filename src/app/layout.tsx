@@ -3,6 +3,7 @@ import localFont from "next/font/local"
 import { Footer, Header, ThemeProvider } from "@/components"
 import { REVALIDATE_TIME, siteConfig } from "@/config"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "@/styles/globals.css"
 import "@/styles/notion.css"
 
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={`${display.variable}`}>
       <body>
         <Analytics />
+        <SpeedInsights />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           <div className="min-h-[calc(100vh-64px)]">{children}</div>
